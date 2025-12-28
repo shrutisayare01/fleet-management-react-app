@@ -30,9 +30,9 @@ const toggleAvailability=useCallback((id)=>{
 
 const deleteVehicle=useCallback((id)=>{
     if(window.confirm("Are you sure you want to delete this vehicle?")){
-        setFleet()
+        setFleet((prev)=>prev.filter((v)=>v.id!==id));
     }
-})
+},[])
 
 
 function App(){
